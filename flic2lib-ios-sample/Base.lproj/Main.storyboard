@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="flic2lib_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xS2-9g-cnM">
+                                <rect key="frame" x="20" y="198" width="374" height="664"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53E-b5-cGh">
+                                <rect key="frame" x="20" y="73" width="374" height="48"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="tsm-nu-zfI"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Start Scan"/>
+                                <connections>
+                                    <action selector="startScanWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="drV-5B-U86"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9SU-Js-Zgt">
+                                <rect key="frame" x="0.0" y="198" width="414" height="664"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlicButtonTableViewCell" rowHeight="80" id="fqO-Ru-b6R" customClass="FlicButtonTableViewCell" customModule="flic2lib_example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FlicButtonTableViewCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fqO-Ru-b6R" translatesAutoresizingMaskIntoConstraints="NO" id="lKG-1b-udN" customClass="FlicButtonTableViewCell" customModule="flic2lib_example" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQN-cm-rxn">
+                                                    <rect key="frame" x="319" y="26" width="97" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Forget"/>
+                                                    <connections>
+                                                        <action selector="forgetButtonPressedWithSender:" destination="fqO-Ru-b6R" eventType="touchUpInside" id="2lB-uK-M0U"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZk-vc-gBC">
+                                                    <rect key="frame" x="234" y="26" width="96" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Disconnect"/>
+                                                    <connections>
+                                                        <action selector="connectToggleButtonPressedWithSender:" destination="fqO-Ru-b6R" eventType="touchUpInside" id="dAT-AP-tNO"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHI-4h-0qn">
+                                                    <rect key="frame" x="77" y="30" width="166" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvg-Hz-1VG">
+                                                    <rect key="frame" x="20" y="18" width="45" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="connectToggleButton" destination="uZk-vc-gBC" id="gw4-qY-zwb"/>
+                                            <outlet property="flicIconView" destination="Kvg-Hz-1VG" id="OkP-ea-2vT"/>
+                                            <outlet property="flicTextLabel" destination="wHI-4h-0qn" id="5vY-xK-ipf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1bu-zl-gJf"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wdH-EX-O9N">
+                                <rect key="frame" x="20" y="140" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Buttons"/>
+                                    <segment title="Log"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlValueChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="jZ0-Pt-biM"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wdH-EX-O9N" secondAttribute="trailing" constant="20" id="IgS-Ug-19P"/>
+                            <constraint firstItem="wdH-EX-O9N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ipt-U0-ElK"/>
+                            <constraint firstItem="9SU-Js-Zgt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lp6-kH-LgL"/>
+                            <constraint firstItem="53E-b5-cGh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="Lx9-D7-GOq"/>
+                            <constraint firstItem="xS2-9g-cnM" firstAttribute="top" secondItem="wdH-EX-O9N" secondAttribute="bottom" constant="27" id="PYC-Wn-h9i"/>
+                            <constraint firstItem="9SU-Js-Zgt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="VDh-Nz-9C1"/>
+                            <constraint firstItem="9SU-Js-Zgt" firstAttribute="top" secondItem="wdH-EX-O9N" secondAttribute="bottom" constant="27" id="Xr0-Zk-AfD"/>
+                            <constraint firstItem="xS2-9g-cnM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="a9C-wN-xyI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="53E-b5-cGh" secondAttribute="trailing" constant="20" id="etX-tu-tHf"/>
+                            <constraint firstItem="53E-b5-cGh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hWE-o5-6ir"/>
+                            <constraint firstItem="9SU-Js-Zgt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hfK-YS-s2P"/>
+                            <constraint firstItem="wdH-EX-O9N" firstAttribute="top" secondItem="53E-b5-cGh" secondAttribute="bottom" constant="19" id="miW-LX-gO7"/>
+                            <constraint firstItem="xS2-9g-cnM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="niY-Xc-ujr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xS2-9g-cnM" secondAttribute="trailing" constant="20" id="xdD-gy-cT0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="scanButton" destination="53E-b5-cGh" id="qDo-XK-pLL"/>
+                        <outlet property="tableView" destination="9SU-Js-Zgt" id="mRZ-Yg-gwu"/>
+                        <outlet property="textView" destination="xS2-9g-cnM" id="OKZ-jT-jIF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
