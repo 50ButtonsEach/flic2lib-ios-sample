@@ -3,19 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AF89BD72448629400BA6D80 /* flic2lib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF89BD62448629400BA6D80 /* flic2lib.xcframework */; };
+		3AF89BD82448629400BA6D80 /* flic2lib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF89BD62448629400BA6D80 /* flic2lib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		756A370323DB2AD800FAFD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A370223DB2AD800FAFD82 /* AppDelegate.swift */; };
 		756A370723DB2AD800FAFD82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A370623DB2AD800FAFD82 /* ViewController.swift */; };
 		756A370A23DB2AD800FAFD82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756A370823DB2AD800FAFD82 /* Main.storyboard */; };
 		756A370C23DB2ADA00FAFD82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756A370B23DB2ADA00FAFD82 /* Assets.xcassets */; };
 		756A370F23DB2ADA00FAFD82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756A370D23DB2ADA00FAFD82 /* LaunchScreen.storyboard */; };
-		756A372623DB2C3500FAFD82 /* FLICManagerSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 756A371E23DB2C3500FAFD82 /* FLICManagerSimulator.m */; };
-		756A372723DB2C3500FAFD82 /* FLICButtonSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 756A371F23DB2C3500FAFD82 /* FLICButtonSimulator.m */; };
-		756A372923DB2C4F00FAFD82 /* flic2lib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756A372023DB2C3500FAFD82 /* flic2lib.framework */; };
-		756A372A23DB2C4F00FAFD82 /* flic2lib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 756A372023DB2C3500FAFD82 /* flic2lib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		756A372D23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A372C23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				756A372A23DB2C4F00FAFD82 /* flic2lib.framework in Embed Frameworks */,
+				3AF89BD82448629400BA6D80 /* flic2lib.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3AF89BD62448629400BA6D80 /* flic2lib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = flic2lib.xcframework; path = "flic2lib-ios/flic2lib.xcframework"; sourceTree = "<group>"; };
 		756A36FF23DB2AD800FAFD82 /* flic2lib-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flic2lib-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		756A370223DB2AD800FAFD82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756A370623DB2AD800FAFD82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,9 +40,6 @@
 		756A370B23DB2ADA00FAFD82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		756A370E23DB2ADA00FAFD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		756A371023DB2ADA00FAFD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		756A371E23DB2C3500FAFD82 /* FLICManagerSimulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLICManagerSimulator.m; sourceTree = "<group>"; };
-		756A371F23DB2C3500FAFD82 /* FLICButtonSimulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLICButtonSimulator.m; sourceTree = "<group>"; };
-		756A372023DB2C3500FAFD82 /* flic2lib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = flic2lib.framework; sourceTree = "<group>"; };
 		756A372C23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlicButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,19 +48,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756A372923DB2C4F00FAFD82 /* flic2lib.framework in Frameworks */,
+				3AF89BD72448629400BA6D80 /* flic2lib.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AF89BD52448629400BA6D80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AF89BD62448629400BA6D80 /* flic2lib.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		756A36F623DB2AD800FAFD82 = {
 			isa = PBXGroup;
 			children = (
-				756A371723DB2C3500FAFD82 /* flic2lib-ios */,
 				756A370123DB2AD800FAFD82 /* flic2lib-ios-sample */,
 				756A370023DB2AD800FAFD82 /* Products */,
+				3AF89BD52448629400BA6D80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,24 +92,6 @@
 				756A371023DB2ADA00FAFD82 /* Info.plist */,
 			);
 			path = "flic2lib-ios-sample";
-			sourceTree = "<group>";
-		};
-		756A371723DB2C3500FAFD82 /* flic2lib-ios */ = {
-			isa = PBXGroup;
-			children = (
-				756A371D23DB2C3500FAFD82 /* simulator */,
-				756A372023DB2C3500FAFD82 /* flic2lib.framework */,
-			);
-			path = "flic2lib-ios";
-			sourceTree = "<group>";
-		};
-		756A371D23DB2C3500FAFD82 /* simulator */ = {
-			isa = PBXGroup;
-			children = (
-				756A371E23DB2C3500FAFD82 /* FLICManagerSimulator.m */,
-				756A371F23DB2C3500FAFD82 /* FLICButtonSimulator.m */,
-			);
-			path = simulator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +168,7 @@
 			files = (
 				756A370723DB2AD800FAFD82 /* ViewController.swift in Sources */,
 				756A370323DB2AD800FAFD82 /* AppDelegate.swift in Sources */,
-				756A372623DB2C3500FAFD82 /* FLICManagerSimulator.m in Sources */,
 				756A372D23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift in Sources */,
-				756A372723DB2C3500FAFD82 /* FLICButtonSimulator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
