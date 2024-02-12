@@ -3,205 +3,166 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3AF89BD72448629400BA6D80 /* flic2lib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF89BD62448629400BA6D80 /* flic2lib.xcframework */; };
-		3AF89BD82448629400BA6D80 /* flic2lib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF89BD62448629400BA6D80 /* flic2lib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		756A370323DB2AD800FAFD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A370223DB2AD800FAFD82 /* AppDelegate.swift */; };
-		756A370723DB2AD800FAFD82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A370623DB2AD800FAFD82 /* ViewController.swift */; };
-		756A370A23DB2AD800FAFD82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756A370823DB2AD800FAFD82 /* Main.storyboard */; };
-		756A370C23DB2ADA00FAFD82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756A370B23DB2ADA00FAFD82 /* Assets.xcassets */; };
-		756A370F23DB2ADA00FAFD82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756A370D23DB2ADA00FAFD82 /* LaunchScreen.storyboard */; };
-		756A372D23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A372C23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift */; };
+		753475C42B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753475C32B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift */; };
+		753475C62B76292B00D1ED5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753475C52B76292B00D1ED5B /* ContentView.swift */; };
+		753475C82B76292C00D1ED5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753475C72B76292C00D1ED5B /* Assets.xcassets */; };
+		753475CB2B76292C00D1ED5B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753475CA2B76292C00D1ED5B /* Preview Assets.xcassets */; };
+		753475D32B762B3B00D1ED5B /* flic2lib in Frameworks */ = {isa = PBXBuildFile; productRef = 753475D22B762B3B00D1ED5B /* flic2lib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		756A372B23DB2C4F00FAFD82 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3AF89BD82448629400BA6D80 /* flic2lib.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		3AF89BD62448629400BA6D80 /* flic2lib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = flic2lib.xcframework; path = "flic2lib-ios/flic2lib.xcframework"; sourceTree = "<group>"; };
-		756A36FF23DB2AD800FAFD82 /* flic2lib-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flic2lib-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		756A370223DB2AD800FAFD82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		756A370623DB2AD800FAFD82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		756A370923DB2AD800FAFD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		756A370B23DB2ADA00FAFD82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		756A370E23DB2ADA00FAFD82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		756A371023DB2ADA00FAFD82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		756A372C23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlicButtonTableViewCell.swift; sourceTree = "<group>"; };
+		753475C02B76292B00D1ED5B /* flic2lib-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flic2lib-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		753475C32B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flic2lib_ios_sampleApp.swift; sourceTree = "<group>"; };
+		753475C52B76292B00D1ED5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		753475C72B76292C00D1ED5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		753475CA2B76292C00D1ED5B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		753475D42B76307600D1ED5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		756A36FC23DB2AD800FAFD82 /* Frameworks */ = {
+		753475BD2B76292B00D1ED5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF89BD72448629400BA6D80 /* flic2lib.xcframework in Frameworks */,
+				753475D32B762B3B00D1ED5B /* flic2lib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3AF89BD52448629400BA6D80 /* Frameworks */ = {
+		753475B72B76292B00D1ED5B = {
 			isa = PBXGroup;
 			children = (
-				3AF89BD62448629400BA6D80 /* flic2lib.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		756A36F623DB2AD800FAFD82 = {
-			isa = PBXGroup;
-			children = (
-				756A370123DB2AD800FAFD82 /* flic2lib-ios-sample */,
-				756A370023DB2AD800FAFD82 /* Products */,
-				3AF89BD52448629400BA6D80 /* Frameworks */,
+				753475C22B76292B00D1ED5B /* flic2lib-ios-sample */,
+				753475C12B76292B00D1ED5B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		756A370023DB2AD800FAFD82 /* Products */ = {
+		753475C12B76292B00D1ED5B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				756A36FF23DB2AD800FAFD82 /* flic2lib-ios-sample.app */,
+				753475C02B76292B00D1ED5B /* flic2lib-ios-sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		756A370123DB2AD800FAFD82 /* flic2lib-ios-sample */ = {
+		753475C22B76292B00D1ED5B /* flic2lib-ios-sample */ = {
 			isa = PBXGroup;
 			children = (
-				756A370223DB2AD800FAFD82 /* AppDelegate.swift */,
-				756A372C23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift */,
-				756A370623DB2AD800FAFD82 /* ViewController.swift */,
-				756A370823DB2AD800FAFD82 /* Main.storyboard */,
-				756A370B23DB2ADA00FAFD82 /* Assets.xcassets */,
-				756A370D23DB2ADA00FAFD82 /* LaunchScreen.storyboard */,
-				756A371023DB2ADA00FAFD82 /* Info.plist */,
+				753475D42B76307600D1ED5B /* Info.plist */,
+				753475C32B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift */,
+				753475C52B76292B00D1ED5B /* ContentView.swift */,
+				753475C72B76292C00D1ED5B /* Assets.xcassets */,
+				753475C92B76292C00D1ED5B /* Preview Content */,
 			);
 			path = "flic2lib-ios-sample";
+			sourceTree = "<group>";
+		};
+		753475C92B76292C00D1ED5B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				753475CA2B76292C00D1ED5B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		756A36FE23DB2AD800FAFD82 /* flic2lib-ios-sample */ = {
+		753475BF2B76292B00D1ED5B /* flic2lib-ios-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 756A371323DB2ADA00FAFD82 /* Build configuration list for PBXNativeTarget "flic2lib-ios-sample" */;
+			buildConfigurationList = 753475CE2B76292C00D1ED5B /* Build configuration list for PBXNativeTarget "flic2lib-ios-sample" */;
 			buildPhases = (
-				756A36FB23DB2AD800FAFD82 /* Sources */,
-				756A36FC23DB2AD800FAFD82 /* Frameworks */,
-				756A36FD23DB2AD800FAFD82 /* Resources */,
-				756A372B23DB2C4F00FAFD82 /* Embed Frameworks */,
+				753475BC2B76292B00D1ED5B /* Sources */,
+				753475BD2B76292B00D1ED5B /* Frameworks */,
+				753475BE2B76292B00D1ED5B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "flic2lib-ios-sample";
+			packageProductDependencies = (
+				753475D22B762B3B00D1ED5B /* flic2lib */,
+			);
 			productName = "flic2lib-ios-sample";
-			productReference = 756A36FF23DB2AD800FAFD82 /* flic2lib-ios-sample.app */;
+			productReference = 753475C02B76292B00D1ED5B /* flic2lib-ios-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		756A36F723DB2AD800FAFD82 /* Project object */ = {
+		753475B82B76292B00D1ED5B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Oskar Öberg";
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					756A36FE23DB2AD800FAFD82 = {
-						CreatedOnToolsVersion = 11.3.1;
+					753475BF2B76292B00D1ED5B = {
+						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 756A36FA23DB2AD800FAFD82 /* Build configuration list for PBXProject "flic2lib-ios-sample" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 753475BB2B76292B00D1ED5B /* Build configuration list for PBXProject "flic2lib-ios-sample" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 756A36F623DB2AD800FAFD82;
-			productRefGroup = 756A370023DB2AD800FAFD82 /* Products */;
+			mainGroup = 753475B72B76292B00D1ED5B;
+			packageReferences = (
+				753475D12B762B3B00D1ED5B /* XCRemoteSwiftPackageReference "flic2lib-ios" */,
+			);
+			productRefGroup = 753475C12B76292B00D1ED5B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				756A36FE23DB2AD800FAFD82 /* flic2lib-ios-sample */,
+				753475BF2B76292B00D1ED5B /* flic2lib-ios-sample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		756A36FD23DB2AD800FAFD82 /* Resources */ = {
+		753475BE2B76292B00D1ED5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756A370F23DB2ADA00FAFD82 /* LaunchScreen.storyboard in Resources */,
-				756A370C23DB2ADA00FAFD82 /* Assets.xcassets in Resources */,
-				756A370A23DB2AD800FAFD82 /* Main.storyboard in Resources */,
+				753475CB2B76292C00D1ED5B /* Preview Assets.xcassets in Resources */,
+				753475C82B76292C00D1ED5B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		756A36FB23DB2AD800FAFD82 /* Sources */ = {
+		753475BC2B76292B00D1ED5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756A370723DB2AD800FAFD82 /* ViewController.swift in Sources */,
-				756A370323DB2AD800FAFD82 /* AppDelegate.swift in Sources */,
-				756A372D23DB2C7100FAFD82 /* FlicButtonTableViewCell.swift in Sources */,
+				753475C62B76292B00D1ED5B /* ContentView.swift in Sources */,
+				753475C42B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		756A370823DB2AD800FAFD82 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				756A370923DB2AD800FAFD82 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		756A370D23DB2ADA00FAFD82 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				756A370E23DB2ADA00FAFD82 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		756A371123DB2ADA00FAFD82 /* Debug */ = {
+		753475CC2B76292C00D1ED5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -220,6 +181,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -230,7 +192,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -244,24 +207,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		756A371223DB2ADA00FAFD82 /* Release */ = {
+		753475CD2B76292C00D1ED5B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -280,6 +244,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -290,7 +255,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -298,59 +264,73 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		756A371423DB2ADA00FAFD82 /* Debug */ = {
+		753475CF2B76292C00D1ED5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"flic2lib-ios-sample/Preview Content\"";
 				DEVELOPMENT_TEAM = J676M46HZA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/flic2lib-ios",
-				);
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "flic2lib-ios-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shortcutlabs.flic2lib-ios-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		756A371523DB2ADA00FAFD82 /* Release */ = {
+		753475D02B76292C00D1ED5B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"flic2lib-ios-sample/Preview Content\"";
 				DEVELOPMENT_TEAM = J676M46HZA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/flic2lib-ios",
-				);
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "flic2lib-ios-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shortcutlabs.flic2lib-ios-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,25 +339,44 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		756A36FA23DB2AD800FAFD82 /* Build configuration list for PBXProject "flic2lib-ios-sample" */ = {
+		753475BB2B76292B00D1ED5B /* Build configuration list for PBXProject "flic2lib-ios-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				756A371123DB2ADA00FAFD82 /* Debug */,
-				756A371223DB2ADA00FAFD82 /* Release */,
+				753475CC2B76292C00D1ED5B /* Debug */,
+				753475CD2B76292C00D1ED5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		756A371323DB2ADA00FAFD82 /* Build configuration list for PBXNativeTarget "flic2lib-ios-sample" */ = {
+		753475CE2B76292C00D1ED5B /* Build configuration list for PBXNativeTarget "flic2lib-ios-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				756A371423DB2ADA00FAFD82 /* Debug */,
-				756A371523DB2ADA00FAFD82 /* Release */,
+				753475CF2B76292C00D1ED5B /* Debug */,
+				753475D02B76292C00D1ED5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		753475D12B762B3B00D1ED5B /* XCRemoteSwiftPackageReference "flic2lib-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/50ButtonsEach/flic2lib-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		753475D22B762B3B00D1ED5B /* flic2lib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 753475D12B762B3B00D1ED5B /* XCRemoteSwiftPackageReference "flic2lib-ios" */;
+			productName = flic2lib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 756A36F723DB2AD800FAFD82 /* Project object */;
+	rootObject = 753475B82B76292B00D1ED5B /* Project object */;
 }

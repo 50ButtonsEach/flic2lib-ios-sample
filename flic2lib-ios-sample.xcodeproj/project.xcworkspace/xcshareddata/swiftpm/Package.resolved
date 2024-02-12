@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "flic2lib-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/50ButtonsEach/flic2lib-ios",
+      "state" : {
+        "branch" : "master",
+        "revision" : "467948343266a77d8e9ab5921afba7933bcb91c6"
+      }
+    }
+  ],
+  "version" : 2
+}

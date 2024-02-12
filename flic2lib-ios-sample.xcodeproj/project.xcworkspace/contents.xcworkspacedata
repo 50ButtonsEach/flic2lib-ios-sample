@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:flic2lib-ios-sample.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
