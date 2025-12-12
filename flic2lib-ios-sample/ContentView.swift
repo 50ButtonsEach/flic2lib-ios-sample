@@ -19,18 +19,24 @@ class ViewModel : NSObject, ObservableObject, FLICButtonDelegate, FLICManagerDel
 	struct Button {
 		let identifier: UUID
 		var name: String?
-		var pushed: Bool = false
+		var serialNumber: String
+		var pushedPrimary: Bool = false
+		var pushedSecondary: Bool = false
 		var connected: Bool = false
+		var isDuo: Bool = false
 		
 		init(_ flicButton: FLICButton) {
 			self.identifier = flicButton.identifier
-			self.name = flicButton.name
+			self.name = flicButton.nickname
+			self.serialNumber = flicButton.serialNumber
+			self.isDuo = flicButton.serialNumber.hasPrefix("D")
 			self.connected = flicButton.state == .connected
 		}
 		
 		init(identifier: UUID, name: String?) {
 			self.identifier = identifier
 			self.name = name
+			self.serialNumber = "";
 		}
 	}
 	
@@ -64,6 +70,28 @@ class ViewModel : NSObject, ObservableObject, FLICButtonDelegate, FLICManagerDel
 		}
 	}
 	
+	func button(_ flicButton: FLICButton, didReceive buttonEvent: FLICButtonEvent) {
+		print("didReceiveButtonEvent", buttonEvent)
+		
+		buttonEvent.isGesture { gesture, buttonNumber in
+			print("gesture detected on button \(buttonNumber): \(gesture)")
+		}
+		
+		buttonEvent.isSingleOrDoubleClickOrHold { type, buttonNumber in
+			print("\(type) on button \(buttonNumber)")
+		}
+		
+		if (buttonEvent.eventClass == .upOrDown) {
+			if let index = indexOf(flicButton) {
+				if (buttonEvent.buttonNumber == 0) {
+					buttons[index].pushedPrimary = buttonEvent.type == .down
+				} else {
+					buttons[index].pushedSecondary = buttonEvent.type == .down
+				}
+			}
+		}
+	}
+	
 	func button(_ button: FLICButton, didFailToConnectWithError error: Error?) {
 		print("didFailToConnectWithError", error ?? "")
 	}
@@ -80,14 +108,14 @@ class ViewModel : NSObject, ObservableObject, FLICButtonDelegate, FLICManagerDel
 	func button(_ flicButton: FLICButton, didReceiveButtonDown queued: Bool, age: Int) {
 		print("didReceiveButtonDown")
 		if let index = indexOf(flicButton) {
-			buttons[index].pushed = true
+			buttons[index].pushedPrimary = true
 		}
 	}
 	
 	func button(_ flicButton: FLICButton, didReceiveButtonUp queued: Bool, age: Int) {
 		print("didReceiveButtonUp")
 		if let index = indexOf(flicButton) {
-			buttons[index].pushed = false
+			buttons[index].pushedPrimary = false
 		}
 	}
 	
@@ -163,11 +191,15 @@ struct ContentView: View {
 				}
 			} else {
 				List(viewModel.buttons, id:\.identifier) { button in
-					let color: Color = button.pushed ? .blue : button.connected ? .green : .yellow
+					let color: Color = button.connected ? .green : .yellow
+					let buttonName = (button.name ?? ("My Flic" + (button.isDuo ? " Duo" : "")))
+					let buttonPushStatus = (button.pushedPrimary ? "●" : "○") + (button.isDuo ? (button.pushedSecondary ? " ●" : " ○") : "")
+					
 					GeometryReader { geometry in
 						HStack{
 							Circle().frame(width: 10, height: geometry.size.height).foregroundColor(color)
-							Text(button.name ?? "My Flic")
+							Text(buttonName)
+							Text(buttonPushStatus)
 							Spacer()
 							Image(systemName: "trash")
 								.resizable()

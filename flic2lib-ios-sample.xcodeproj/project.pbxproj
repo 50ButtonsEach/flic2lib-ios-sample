@@ -364,7 +364,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/50ButtonsEach/flic2lib-ios";
 			requirement = {
-				branch = master;
+				branch = feature/duo;
 				kind = branch;
 			};
 		};
