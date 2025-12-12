@@ -8,6 +8,19 @@
 import Foundation
 import flic2lib
 
+class FlicButtonModel: ObservableObject, Identifiable {
+	let flicButton: FLICButton
+	var isDuo:Bool {
+		return self.flicButton.serialNumber.hasPrefix("D")
+	}
+	
+	@Published var downButtons: Set<UInt8> = []
+	
+	init(_ flicButton: FLICButton) {
+		self.flicButton = flicButton
+	}
+}
+
 class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICManagerDelegate {
     
     @Published var buttons: [FlicButtonModel] = []
@@ -15,19 +28,6 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
     @Published var buttonToBeRemoved: FlicButtonModel?
     @Published var isScanning: Bool = false
     @Published var scanState: FLICButtonScannerStatusEvent? = nil
-    
-    class FlicButtonModel: ObservableObject, Identifiable {
-        let flicButton: FLICButton
-		var isDuo:Bool {
-			return self.flicButton.serialNumber.hasPrefix("D")
-		}
-		
-		@Published var downButtons: Set<UInt8> = []
-        
-        init(_ flicButton: FLICButton) {
-            self.flicButton = flicButton
-        }
-    }
     
     override convenience init() {
         self.init(isPreview: false)
@@ -53,6 +53,7 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
     
     func button(_ flicButton: FLICButton, didDisconnectWithError error: Error?) {
         print("didDisconnectWithError", error ?? "")
+		self.buttons = self.buttons
     }
     
     func button(_ flicButton: FLICButton, didReceive buttonEvent: FLICButtonEvent) {

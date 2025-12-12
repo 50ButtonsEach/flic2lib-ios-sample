@@ -38,7 +38,10 @@ struct FlicListView: View {
     private var buttonListView: some View {
         List {
             ForEach(viewModel.buttons) { button in
-                FlicButtonRow(button: button, viewModel: viewModel)
+                FlicButtonRow(button: button, onRemove: {
+                    viewModel.buttonToBeRemoved = button
+                    viewModel.promptToRemoveButton = true
+                })
             }
         }
         .alert(isPresented: $viewModel.promptToRemoveButton) {
@@ -105,8 +108,8 @@ struct FlicListView: View {
 }
 
 struct FlicButtonRow: View {
-    @ObservedObject var button: FlicListViewModel.FlicButtonModel
-    @ObservedObject var viewModel: FlicListViewModel
+    @ObservedObject var button: FlicButtonModel
+    var onRemove: () -> Void
     
     var body: some View {
         HStack {
@@ -137,10 +140,7 @@ struct FlicButtonRow: View {
 			
 			Spacer()
             
-            Button(action: {
-                viewModel.buttonToBeRemoved = button
-                viewModel.promptToRemoveButton = true
-            }) {
+            Button(action: onRemove) {
                  Image(systemName: "trash")
                     .foregroundColor(.red)
             }
