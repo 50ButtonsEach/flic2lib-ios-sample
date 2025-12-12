@@ -66,6 +66,8 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
         buttonEvent.isSingleOrDoubleClickOrHold { type, buttonNumber in
             print("\(type) on button \(buttonNumber)")
         }
+		
+		
         
         if buttonEvent.eventClass == .upOrDown {
 			if let button = buttons.first(where: { $0.flicButton == flicButton }) {
