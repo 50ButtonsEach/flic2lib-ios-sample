@@ -1,0 +1,144 @@
+//
+//  ContentView.swift
+//  flic2lib-ios-sample
+//
+//  Created by Oskar Öberg on 2024-02-09.
+//
+
+import SwiftUI
+import flic2lib
+
+struct FlicListView: View {
+    
+    @StateObject var viewModel = FlicListViewModel()
+    
+    var body: some View {
+		VStack {
+			if viewModel.buttons.isEmpty {
+				emptyStateView
+			} else {
+				buttonListView
+			}
+			
+			scanSectionView
+		}
+    }
+    
+    private var emptyStateView: some View {
+        List {
+            HStack {
+                Spacer()
+                Text("No Flics connected")
+                    .foregroundColor(.gray)
+                Spacer()
+            }
+        }
+    }
+    
+    private var buttonListView: some View {
+        List {
+            ForEach(viewModel.buttons) { button in
+                FlicButtonRow(button: button, viewModel: viewModel)
+            }
+        }
+        .alert(isPresented: $viewModel.promptToRemoveButton) {
+            Alert(
+                title: Text("Remove Flic"),
+                message: Text("Do you want to remove this button?"),
+                primaryButton: .destructive(Text("Remove")) {
+                    if let button = viewModel.buttonToBeRemoved {
+                        viewModel.removeButton(button)
+                    }
+                },
+                secondaryButton: .cancel()
+            )
+        }
+    }
+    
+    private var scanSectionView: some View {
+        VStack {
+            if viewModel.isScanning {
+                HStack {
+                    Text(scanStatusText(for: viewModel.scanState))
+                    Spacer().frame(width: 10)
+                    ProgressView()
+                }
+                .padding()
+			} else {
+				Button(action: {
+					print("start scan");
+					viewModel.scan()
+				}) {
+					Text("Add Flic")
+					Image(systemName: "plus.circle")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.foregroundColor(.blue)
+						.frame(width: 20)
+				}
+				.padding()
+			}
+        }
+    }
+    
+    private func scanStatusText(for state: FLICButtonScannerStatusEvent?) -> String {
+        switch state {
+        case .discovered: return "Discovered..."
+        case .connected: return "Connected..."
+        case .verified: return "Verified!"
+        case .verificationFailed: return "Verification failed"
+        case nil: return "Looking for buttons..."
+        @unknown default: return "Scanning..."
+        }
+    }
+}
+
+struct FlicButtonRow: View {
+    @ObservedObject var button: FlicListViewModel.FlicButtonModel
+    @ObservedObject var viewModel: FlicListViewModel
+    
+    var body: some View {
+        HStack {
+			Image(systemName: "circle.fill")
+				.foregroundColor(button.flicButton.state == .connected ? .green : .yellow)
+            
+			Text(button.flicButton.serialNumber)
+			
+			Group {
+				if button.downButtons.contains(0) {
+					Image(systemName: "circle.fill")
+				} else {
+					Image(systemName: "circle")
+				}
+			}
+			.font(.caption)
+			
+			if button.isDuo {
+				Group {
+					 if button.downButtons.contains(1) {
+						Image(systemName: "circle.fill")
+					} else {
+						Image(systemName: "circle")
+					}
+				}
+				.font(.caption)
+			}
+			
+			
+			Spacer()
+            
+            Button(action: {
+                viewModel.buttonToBeRemoved = button
+                viewModel.promptToRemoveButton = true
+            }) {
+                 Image(systemName: "trash")
+                    .foregroundColor(.red)
+            }
+            .buttonStyle(BorderlessButtonStyle())
+        }
+    }
+}
+
+#Preview {
+    FlicListView(viewModel: FlicListViewModel(isPreview: true))
+}

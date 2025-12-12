@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751C083B2EEC02000017C15D /* FlicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C083A2EEC02000017C15D /* FlicListViewModel.swift */; };
 		753475C42B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753475C32B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift */; };
-		753475C62B76292B00D1ED5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753475C52B76292B00D1ED5B /* ContentView.swift */; };
+		753475C62B76292B00D1ED5B /* FlicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753475C52B76292B00D1ED5B /* FlicListView.swift */; };
 		753475C82B76292C00D1ED5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753475C72B76292C00D1ED5B /* Assets.xcassets */; };
 		753475CB2B76292C00D1ED5B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753475CA2B76292C00D1ED5B /* Preview Assets.xcassets */; };
 		753475D32B762B3B00D1ED5B /* flic2lib in Frameworks */ = {isa = PBXBuildFile; productRef = 753475D22B762B3B00D1ED5B /* flic2lib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751C083A2EEC02000017C15D /* FlicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicListViewModel.swift; sourceTree = "<group>"; };
 		753475C02B76292B00D1ED5B /* flic2lib-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flic2lib-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753475C32B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flic2lib_ios_sampleApp.swift; sourceTree = "<group>"; };
-		753475C52B76292B00D1ED5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		753475C52B76292B00D1ED5B /* FlicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicListView.swift; sourceTree = "<group>"; };
 		753475C72B76292C00D1ED5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		753475CA2B76292C00D1ED5B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		753475D42B76307600D1ED5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +58,8 @@
 			children = (
 				753475D42B76307600D1ED5B /* Info.plist */,
 				753475C32B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift */,
-				753475C52B76292B00D1ED5B /* ContentView.swift */,
+				753475C52B76292B00D1ED5B /* FlicListView.swift */,
+				751C083A2EEC02000017C15D /* FlicListViewModel.swift */,
 				753475C72B76292C00D1ED5B /* Assets.xcassets */,
 				753475C92B76292C00D1ED5B /* Preview Content */,
 			);
@@ -147,7 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753475C62B76292B00D1ED5B /* ContentView.swift in Sources */,
+				751C083B2EEC02000017C15D /* FlicListViewModel.swift in Sources */,
+				753475C62B76292B00D1ED5B /* FlicListView.swift in Sources */,
 				753475C42B76292B00D1ED5B /* flic2lib_ios_sampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
