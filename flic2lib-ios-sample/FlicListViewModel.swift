@@ -60,24 +60,21 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
         print("didReceiveButtonEvent", buttonEvent)
         
         buttonEvent.isGesture { gesture, buttonNumber in
-            print("gesture detected on button \(buttonNumber): \(gesture)")
+			let gestureName = gesture == .left ? "left" : gesture == .right ? "right" : gesture == .up ? "up" : "down"
+			print("gesture \(gestureName) on \(buttonNumber == 0 ? "big" : "small") button")
         }
         
         buttonEvent.isSingleOrDoubleClickOrHold { type, buttonNumber in
             print("\(type) on button \(buttonNumber)")
         }
 		
-		
-        
-        if buttonEvent.eventClass == .upOrDown {
-			if let button = buttons.first(where: { $0.flicButton == flicButton }) {
-				if (buttonEvent.type == .down) {
-					button.downButtons.insert(buttonEvent.buttonNumber)
-				} else {
-					button.downButtons.remove(buttonEvent.buttonNumber)
-				}
-            }
-        }
+		buttonEvent.isButtonUpOrDown { type, buttonNumber in
+			if (type == .down) {
+				buttons.first(where: { $0.flicButton == flicButton })?.downButtons.insert(buttonNumber)
+			} else {
+				buttons.first(where: { $0.flicButton == flicButton })?.downButtons.remove(buttonNumber)
+			}
+		}
     }
     
     func button(_ button: FLICButton, didFailToConnectWithError error: Error?) {
