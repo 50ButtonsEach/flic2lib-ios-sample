@@ -8,16 +8,25 @@
 import Foundation
 import flic2lib
 
+@dynamicMemberLookup
 class FlicButtonModel: ObservableObject, Identifiable {
 	let flicButton: FLICButton
+	@Published var downButtons: Set<UInt8> = []
+	
+	var id: UUID {
+		flicButton.identifier
+	}
+	
 	var isDuo:Bool {
 		return self.flicButton.serialNumber.hasPrefix("D")
 	}
 	
-	@Published var downButtons: Set<UInt8> = []
-	
 	init(_ flicButton: FLICButton) {
 		self.flicButton = flicButton
+	}
+	
+	subscript<T>(dynamicMember keyPath: KeyPath<FLICButton, T>) -> T {
+		return flicButton[keyPath: keyPath]
 	}
 }
 
@@ -44,6 +53,7 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
     
     func buttonDidConnect(_ flicButton: FLICButton) {
         print("buttonDidConnect")
+        buttons.first(where: { $0.flicButton == flicButton })?.objectWillChange.send()
     }
     
     func buttonIsReady(_ button: FLICButton) {
@@ -53,28 +63,29 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
     
     func button(_ flicButton: FLICButton, didDisconnectWithError error: Error?) {
         print("didDisconnectWithError", error ?? "")
-		self.buttons = self.buttons
+		buttons.first(where: { $0.flicButton == flicButton })?.objectWillChange.send()
     }
     
     func button(_ flicButton: FLICButton, didReceive buttonEvent: FLICButtonEvent) {
         print("didReceiveButtonEvent", buttonEvent)
         
         buttonEvent.isGesture { gesture, buttonNumber in
-			let gestureName = gesture == .left ? "left" : gesture == .right ? "right" : gesture == .up ? "up" : "down"
-			print("gesture \(gestureName) on \(buttonNumber == 0 ? "big" : "small") button")
+			print("gesture detected on button \(buttonNumber): \(gesture)")
         }
         
         buttonEvent.isSingleOrDoubleClickOrHold { type, buttonNumber in
             print("\(type) on button \(buttonNumber)")
         }
 		
-		buttonEvent.isButtonUpOrDown { type, buttonNumber in
-			if (type == .down) {
-				buttons.first(where: { $0.flicButton == flicButton })?.downButtons.insert(buttonNumber)
-			} else {
-				buttons.first(where: { $0.flicButton == flicButton })?.downButtons.remove(buttonNumber)
-			}
-		}
+		if buttonEvent.eventClass == .upOrDown {
+			if let button = buttons.first(where: { $0.flicButton == flicButton }) {
+				if (buttonEvent.type == .down) {
+					button.downButtons.insert(buttonEvent.buttonNumber)
+				} else {
+					button.downButtons.remove(buttonEvent.buttonNumber)
+				}
+            }
+        }
     }
     
     func button(_ button: FLICButton, didFailToConnectWithError error: Error?) {

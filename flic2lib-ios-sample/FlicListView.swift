@@ -111,12 +111,12 @@ struct FlicButtonRow: View {
     @ObservedObject var button: FlicButtonModel
     var onRemove: () -> Void
     
-    var body: some View {
+	var body: some View {
         HStack {
 			Image(systemName: "circle.fill")
-				.foregroundColor(button.flicButton.state == .connected ? .green : .yellow)
+				.foregroundColor(button.state == .connected ? .green : .yellow)
             
-			Text(button.flicButton.serialNumber)
+			Text(button.serialNumber)
 			
 			Group {
 				if button.downButtons.contains(0) {
