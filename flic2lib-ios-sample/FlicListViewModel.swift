@@ -120,14 +120,20 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
 		}
     }
     
+    @Published var scanError: String? = nil
+
     func scan() {
         scanState = nil
         isScanning = true
+        scanError = nil
         FLICManager.shared()?.scanForButtons(stateChangeHandler: { event in
             print(event)
             self.scanState = event
         }, completion: { button, error in
             self.isScanning = false
+            if let error = error {
+                self.scanError = error.localizedDescription
+            }
         })
     }
 }

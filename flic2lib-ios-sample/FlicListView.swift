@@ -79,6 +79,17 @@ struct FlicListView: View {
 				.padding()
 			}
         }
+        .alert(item: Binding<AlertError?>(
+            get: { viewModel.scanError.map { AlertError(message: $0) } },
+            set: { _ in viewModel.scanError = nil }
+        )) { alertError in
+            Alert(title: Text("Error"), message: Text(alertError.message), dismissButton: .default(Text("OK")))
+        }
+    }
+    
+    struct AlertError: Identifiable {
+        let id = UUID()
+        let message: String
     }
     
     private func scanStatusText(for state: FLICButtonScannerStatusEvent?) -> String {
@@ -123,7 +134,6 @@ struct FlicButtonRow: View {
 				}
 				.font(.caption)
 			}
-			
 			
 			Spacer()
             
