@@ -118,16 +118,8 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
     }
     
     func removeButton(_ button: FlicButtonModel) {
-		Task {
-			defer {
-				reloadButtons()
-			}
-			
-			do {
-				try await FLICManager.shared()?.forgetButton(button.flicButton)
-			} catch {
-				print("Failed to forget button: \(error)")
-			}
+		FLICManager.shared()?.forgetButton(button.flicButton) { uuid, error in
+			self.reloadButtons()
 		}
     }
     
