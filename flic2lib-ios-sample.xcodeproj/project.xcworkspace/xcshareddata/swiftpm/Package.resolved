@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/50ButtonsEach/flic2lib-ios",
       "state" : {
-        "branch" : "feature/duo",
-        "revision" : "f2b4ccdb55f5ddba32fc9bdc6dede5d01d9b894f"
+        "branch" : "master",
+        "revision" : "416d4cc5192ae1b14e525fac721016ca5cc3a0eb"
       }
     }
   ],
