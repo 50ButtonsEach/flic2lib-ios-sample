@@ -69,14 +69,20 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
     func button(_ flicButton: FLICButton, didReceive buttonEvent: FLICButtonEvent) {
         print("didReceiveButtonEvent", buttonEvent)
         
+		// Determine if the event was a Duo swipe gesture
         buttonEvent.isGesture { gesture, buttonNumber in
 			print("gesture detected on button \(buttonNumber): \(gesture)")
         }
         
+		// Determine if the event a click, double click or hold.
+		// Note that listening for all click types introduces some latency since
+		// we need to distinguis between click and double click. For optimal
+		// latency, use the isButtonDown qualifier.
         buttonEvent.isSingleOrDoubleClickOrHold { type, buttonNumber in
             print("\(type) on button \(buttonNumber)")
         }
 		
+		// update UI button state
 		if buttonEvent.eventClass == .upOrDown {
 			if let button = buttons.first(where: { $0.flicButton == flicButton }) {
 				if (buttonEvent.type == .down) {
