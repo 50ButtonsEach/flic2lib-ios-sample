@@ -11,7 +11,7 @@ import SwiftUI
 struct flic2lib_ios_sampleApp: App {
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+			FlicListView()
 		}
 	}
 }

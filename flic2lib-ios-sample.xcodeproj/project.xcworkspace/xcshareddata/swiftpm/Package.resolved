@@ -1,4 +1,5 @@
 {
+  "originHash" : "359ec8498d177b4edf6b3b65da2ed8be5b4e555d5ee6349b3b461fa927cd3b16",
   "pins" : [
     {
       "identity" : "flic2lib-ios",
@@ -6,9 +7,9 @@
       "location" : "https://github.com/50ButtonsEach/flic2lib-ios",
       "state" : {
         "branch" : "master",
-        "revision" : "467948343266a77d8e9ab5921afba7933bcb91c6"
+        "revision" : "416d4cc5192ae1b14e525fac721016ca5cc3a0eb"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
