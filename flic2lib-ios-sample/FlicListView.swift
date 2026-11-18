@@ -118,24 +118,9 @@ struct FlicButtonRow: View {
             
 			Text(button.serialNumber)
 			
-			Group {
-				if button.downButtons.contains(0) {
-					Image(systemName: "circle.fill")
-				} else {
-					Image(systemName: "circle")
-				}
-			}
-			.font(.caption)
-			
+			buttonIndicator(number: 0)
 			if button.isDuo {
-				Group {
-					 if button.downButtons.contains(1) {
-						Image(systemName: "circle.fill")
-					} else {
-						Image(systemName: "circle")
-					}
-				}
-				.font(.caption)
+				buttonIndicator(number: 1)
 			}
 			
 			Spacer()
@@ -147,6 +132,34 @@ struct FlicButtonRow: View {
             .buttonStyle(BorderlessButtonStyle())
         }
     }
+
+    private func buttonIndicator(number: UInt8) -> some View {
+        ZStack {
+            if button.isDuo {
+                let isDown = button.downButtons.contains(number)
+                Circle()
+                    .fill(isDown ? Color.primary : Color.clear)
+                    .overlay(Circle().strokeBorder(Color.primary, lineWidth: 1.5))
+                    .frame(width: 20, height: 20)
+
+                Capsule()
+                    .fill(isDown ? Color(uiColor: .systemBackground) : Color.primary)
+                    .frame(width: 1.5, height: 10)
+                    .offset(y: -4.5)
+                    .rotationEffect(.degrees((button.pushTwistAngles[number] ?? 0) - 45))
+            } else {
+                Circle()
+                    .fill(button.downButtons.contains(number) ? Color.primary : Color.clear)
+                    .overlay(Circle().strokeBorder(Color.primary, lineWidth: 1.5))
+                    .frame(width: 20, height: 20)
+            }
+        }
+        .frame(width: 26, height: 26)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(button.isDuo ? (number == 0 ? "Big button" : "Small button") : "Button")
+        .accessibilityValue(button.downButtons.contains(number) ? "Pressed" : "Released")
+    }
+
 }
 
 #Preview {

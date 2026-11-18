@@ -12,6 +12,7 @@ import flic2lib
 class FlicButtonModel: ObservableObject, Identifiable {
 	let flicButton: FLICButton
 	@Published var downButtons: Set<UInt8> = []
+	@Published var pushTwistAngles: [UInt8: Double] = [:]
 	
 	var id: UUID {
 		flicButton.identifier
@@ -58,12 +59,38 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
 	
 	func buttonIsReady(_ button: FLICButton) {
 		print("buttonIsReady")
+		button.enableDuoPushTwist(forBigButton: true, smallButton: true)
 		reloadButtons()
 	}
 	
 	func button(_ flicButton: FLICButton, didDisconnectWithError error: Error?) {
 		print("didDisconnectWithError", error ?? "")
-		buttons.first(where: { $0.flicButton == flicButton })?.objectWillChange.send()
+		if let button = buttons.first(where: { $0.flicButton == flicButton }) {
+			button.downButtons.removeAll()
+			button.objectWillChange.send()
+		}
+	}
+
+	func button(_ flicButton: FLICButton, didReceiveDuoPushTwistNotification buttonInfo: [FLICDuoPushTwistNotificationButtonInfo], angleDiff: Int32) {
+		guard let button = buttons.first(where: { $0.flicButton == flicButton }) else { return }
+		// The notification contains big-button state first, then small-button state.
+		// Angle deltas use 65536 units per full turn.
+		let degrees = Double(angleDiff) * 360 / 65536
+		for (index, info) in buttonInfo.prefix(2).enumerated() {
+			let number = UInt8(index)
+			if info.isPressed {
+				button.downButtons.insert(number)
+				if button.pushTwistAngles[number] == nil {
+					button.pushTwistAngles[number] = 0
+				}
+				// A new press establishes the baseline; retain the previous position.
+				if !info.isFirstEvent {
+					button.pushTwistAngles[number, default: 0] += degrees
+				}
+			} else {
+				button.downButtons.remove(number)
+			}
+		}
 	}
 	
 	func button(_ flicButton: FLICButton, didReceive buttonEvent: FLICButtonEvent) {
@@ -123,7 +150,9 @@ class FlicListViewModel: NSObject, ObservableObject, FLICButtonDelegate, FLICMan
 			var newButtons: [FlicButtonModel] = []
 			if let manager = FLICManager.shared() {
 				for flicButton in manager.buttons() {
-					newButtons.append(FlicButtonModel(flicButton))
+					let model = self.buttons.first(where: { $0.flicButton == flicButton }) ?? FlicButtonModel(flicButton)
+					model.objectWillChange.send()
+					newButtons.append(model)
 				}
 			}
 			self.buttons = newButtons
